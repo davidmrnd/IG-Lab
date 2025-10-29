@@ -56,20 +56,20 @@ Esta sección le permite gestionar la experiencia de visualización:
   * **Rotar Auto Orbital:** Una casilla que activa una rotación lenta y constante de la cámara orbital alrededor del objeto enfocado.
   * **Velocidad Nave:** Un deslizador para ajustar qué tan rápido se mueve la cámara en la "Vista Nave".
 
-    ![Simulacion](/src/readme_captures/image.png)
+    ![Simulacion](src/readme_captures/image.png)
   * **Modo de Vista:** Un selector clave para cambiar entre tres modos:
       * **Vista Orbital:** (Predeterminada) Le permite orbitar alrededor de un astro.
           * **Arrastrar ratón:** Rota la cámara.
           * **Rueda del ratón:** Acerca o aleja el zoom.
-![alt text](/src/readme_captures/image-1.png)
+![alt text](src/readme_captures/image-1.png)
       * **Vista Nave:** Una cámara de vuelo libre (*FlyControls*).
           * **Arrastrar ratón:** Orienta la cámara.
           * **W, A, S, D:** Mover la nave (adelante, izq., atrás, der.).
           * **R, F:** Ascender y descender.
           * **Q, E:** Rotar/Alabear la nave.
-  ![alt text](/src/readme_captures/image-2.png)
+  ![alt text](src/readme_captures/image-2.png)
       * **Ambas:** Muestra una vista de pantalla dividida, combinando la Vista Orbital (izquierda) y la Vista Nave (derecha).
-![alt text](/src/readme_captures/image-3.png)
+![alt text](src/readme_captures/image-3.png)
 
 ### 2\. Gestión Dinámica de Astros
 
@@ -86,7 +86,7 @@ Este panel le permite diseñar y añadir un nuevo planeta a la simulación. Los 
 
 Una vez configurado, pulse el botón **"Añadir Planeta"** para instanciarlo en la escena. El nuevo planeta se agregará automáticamente a los menús desplegables de "Enfocar Astro" y "Borrar Astro".
 
-![alt text](/src/readme_captures/image-4.png)
+![alt text](src/readme_captures/image-4.png)
 
 #### Borrar Astro
 
@@ -96,4 +96,4 @@ Este panel permite eliminar cualquier planeta de la simulación (excepto el Sol)
 * **Borrar Seleccionado:** Al pulsar este botón, el planeta seleccionado se eliminará permanentemente de la simulación. Si la cámara estaba enfocando a ese astro, automáticamente volverá a enfocar al Sol.
 
 
-![alt text](/src/readme_captures/image-5.png)
+![alt text](src/readme_captures/image-5.png)
