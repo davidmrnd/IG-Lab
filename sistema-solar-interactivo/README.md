@@ -97,3 +97,15 @@ Este panel permite eliminar cualquier planeta de la simulación (excepto el Sol)
 
 
 ![alt text](src/readme_captures/image-5.png)
+
+Claro, aquí tienes una sección que puedes añadir a tu `README` para enlazar tu demo en vivo de CodeSandbox.
+
+Puedes situarla justo después de la sección de "Descripción del Proyecto" o al final, antes de "Recursos y Créditos".
+
+---
+
+## Demo en Vivo (CodeSandbox)
+
+Para explorar la simulación directamente en tu navegador sin necesidad de instalación, puedes acceder a la demo en vivo alojada en CodeSandbox:
+
+**[[Haz clic aquí para ver la simulación en vivo](https://codesandbox.io/p/sandbox/objective-sanderson-nstzlp)]**
