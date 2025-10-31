@@ -8,13 +8,13 @@ Una simulación 3D interactiva de nuestro sistema solar, construida utilizando l
 
 ## Puesta en Marcha Local
 
-Para ejecutar la simulación en su máquina local, siga estos pasos. Se asume que el proyecto está configurado para usar un bundler como Parcel (basado en los comandos del ejemplo).
+Para ejecutar la simulación en su máquina local, siga estos pasos.
 
 1.  **Clonar el repositorio y entrar a este proyecto**
 
     ```bash
     git clone https://github.com/davidmrnd/IG-Lab
-    cd sistema-solar-interactivo
+    cd IG-Lab/sistema-solar-interactivo
     ```
 
 2.  **Instalar Node.js:**
@@ -101,6 +101,12 @@ Este panel permite eliminar cualquier planeta de la simulación (excepto el Sol)
 Claro, aquí tienes una sección que puedes añadir a tu `README` para enlazar tu demo en vivo de CodeSandbox.
 
 Puedes situarla justo después de la sección de "Descripción del Proyecto" o al final, antes de "Recursos y Créditos".
+
+---
+
+## Vídeo de la ejecución de la tarea
+
+<video controls src="src/readme_captures/demo_sistema_solar.mov" title="Title"></video>
 
 ---
 
