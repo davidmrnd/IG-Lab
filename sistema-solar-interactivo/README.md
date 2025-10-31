@@ -106,7 +106,9 @@ Puedes situarla justo después de la sección de "Descripción del Proyecto" o a
 
 ## Vídeo de la ejecución de la tarea
 
-<video controls src="src/readme_captures/demo_sistema_solar.mov" title="Title"></video>
+[![▶️ Ver demo en YouTube](https://img.youtube.com/vi/XnJQVWxq37A/hqdefault.jpg)](https://youtu.be/XnJQVWxq37A)
+
+https://youtu.be/XnJQVWxq37A
 
 ---
 
