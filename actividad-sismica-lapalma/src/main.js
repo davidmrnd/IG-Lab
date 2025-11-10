@@ -8,6 +8,7 @@ let objetosSismos = [];
 let datosSismos = [];
 
 let fechaDiv;
+let infoDiv;
 let gui;
 let clock;
 let minFecha, maxFecha;
@@ -33,6 +34,13 @@ const MAP_MIN_LAT = 28.444992237;
 const MAP_MAX_LAT = 28.860555405;
 
 const BASE_SPEED = 86400000;
+
+function togglePlayPause() {
+  guiControls.isPlaying = !guiControls.isPlaying;
+  if (guiControls.playPauseController) {
+    guiControls.playPauseController.updateDisplay();
+  }
+}
 
 init();
 animate();
@@ -98,6 +106,20 @@ function init() {
   fechaDiv.innerHTML = "Cargando sismos...";
   document.body.appendChild(fechaDiv);
 
+  infoDiv = document.createElement("div");
+  infoDiv.style.position = "absolute";
+  infoDiv.style.left = "10px";
+  infoDiv.style.top = "50px";
+  infoDiv.style.width = "250px";
+  infoDiv.style.color = "#fff";
+  infoDiv.style.backgroundColor = "rgba(0,0,0,0.7)";
+  infoDiv.style.padding = "10px";
+  infoDiv.style.fontFamily = "Monospace";
+  infoDiv.style.fontSize = "12px";
+  infoDiv.style.zIndex = "100";
+  infoDiv.style.display = "none"; // Inicialmente oculto
+  document.body.appendChild(infoDiv);
+
   gui = new GUI(); 
   
   gui.add(guiControls, 'opacity', 0, 1, 0.01)
@@ -133,16 +155,42 @@ function init() {
     }
   });
 
+  renderer.domElement.addEventListener('click', onMouseClick, false);
+
 }
 
-function togglePlayPause() {
-  guiControls.isPlaying = !guiControls.isPlaying;
-  if (guiControls.playPauseController) {
-    guiControls.playPauseController.updateDisplay();
+function onMouseClick(event) {
+  const mouse = new THREE.Vector2();
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  const raycaster = new THREE.Raycaster();
+  raycaster.setFromCamera(mouse, camera);
+
+  const intersects = raycaster.intersectObjects(objetosSismos);
+
+  if (intersects.length > 0) {
+    const intersected = intersects[0].object;
+    if (intersected.visible) {
+      const data = intersected.userData;
+      infoDiv.innerHTML = `
+        <strong>Información del Sismo</strong><br>
+        Fecha: ${data.fecha.toLocaleString('es-ES')}<br>
+        Latitud: ${data.lat.toFixed(4)}<br>
+        Longitud: ${data.lon.toFixed(4)}<br>
+        Profundidad: ${data.prof} Km<br>
+        Magnitud: ${data.mag}
+      `;
+      infoDiv.style.display = "block";
+    } else {
+      infoDiv.style.display = "none";
+    }
+  } else {
+    infoDiv.style.display = "none";
   }
 }
 
-function procesarCSVSismos(content) {
+function procesarCSVSismos(content) { 
   const sep = ";";
   const filas = content.split("\n");
   const encabezados = filas[0].split(sep).map(h => h.trim());
@@ -186,7 +234,7 @@ function procesarCSVSismos(content) {
       t = Math.max(0, Math.min(t, 1));
       let sismoColor = new THREE.Color().lerpColors(colorBase, colorPeligro, t);
       let sismoRadio = Map2Range(mag, 1.0, 5.0, 0.02, 0.1); 
-      datosSismos.push({ fecha, mx, my, mz, sismoRadio, sismoColor });
+      datosSismos.push({ fecha, mx, my, mz, sismoRadio, sismoColor, lat, lon, prof, mag });
     }
   }
   minFecha = tempMinFecha;
@@ -222,7 +270,13 @@ function crearTodasLasBolas() {
     const mesh = new THREE.Mesh(sismoGeometry, material);
     mesh.position.set(data.mx, data.my, data.mz);
     mesh.scale.set(data.sismoRadio, data.sismoRadio, data.sismoRadio);
-    mesh.userData.fecha = data.fecha;
+    mesh.userData = {
+      fecha: data.fecha,
+      lat: data.lat,
+      lon: data.lon,
+      prof: data.prof,
+      mag: data.mag
+    };
     mesh.visible = false; 
     objetosSismos.push(mesh);
     scene.add(mesh);
