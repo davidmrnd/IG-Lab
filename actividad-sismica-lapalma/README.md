@@ -78,4 +78,4 @@ https://youtu.be/VHlCbCilRys
 
 Para explorar la simulación directamente en tu navegador sin necesidad de instalación, puedes acceder a la demo en vivo alojada en CodeSandbox:
 
-**[[Haz clic aquí para ver la simulación en vivo](https://codesandbox.io/p/sandbox/)]**
+**[[Haz clic aquí para ver la simulación en vivo](https://codesandbox.io/p/sandbox/admiring-cherry-ynqkwv)]**
