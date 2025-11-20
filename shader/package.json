@@ -1,0 +1,19 @@
+{
+  "name": "threejs-ig-eii",
+  "version": "1.0.0",
+  "description": "IG-EII",
+  "scripts": {
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html"
+  },
+  "dependencies": {
+    "parcel": "^2.16.0",
+    "three": "^0.152.1"
+  },
+  "keywords": [
+    "three.js"
+  ],
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.16.1"
+  }
+}
