@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulación Espacial: Física y Órbitas</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #ui-container {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        pointer-events: none;
+        z-index: 10;
+      }
+      h1 {
+        color: #ffaa00;
+        margin: 0;
+        text-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      p {
+        color: #aaccff;
+        font-size: 0.9rem;
+        text-shadow: 1px 1px 2px #000;
+        margin-top: 5px;
+      }
+      .controls {
+        background: rgba(0, 20, 40, 0.6);
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 136, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ui-container">
+      <div class="controls">
+        <h1>Entorno Espacial Interactivo</h1>
+        <p>
+          🟦 <b>Planeta:</b> Movimiento cinemático (Tween.js)<br>
+          🪨 <b>Asteroides:</b> Física dinámica (Ammo.js)<br>
+          ✨ <b>Haz CLICK en el espacio</b> para generar una onda de fuerza
+        </p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

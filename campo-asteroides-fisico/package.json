@@ -1,0 +1,19 @@
+{
+  "name": "tarea-threejs-tween",
+  "version": "1.0.0",
+  "description": "Tarea de animacion con Tween.js y Three.js",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "@tweenjs/tween.js": "^18.6.4",
+    "ammojs-typed": "^1.0.2",
+    "parcel-bundler": "^1.6.1",
+    "three": "^0.152.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0"
+  }
+}
